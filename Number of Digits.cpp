@@ -12,3 +12,10 @@ int countDigit(long long x) {
     }
     return count;
 }
+
+//Approach 2 
+
+/*
+int cnt = (int)(log10(n) + 1);
+
+*/
