@@ -23,4 +23,5 @@ bool palindrome(int n)
     {
         return false;
     }
+    return false;
 }
