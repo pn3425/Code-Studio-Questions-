@@ -1,5 +1,5 @@
 //STRIVER APPROACHES
-//App1 - Brute Force 
+//App1 - Brute Force (Left Rotate) TC->O(n), SC-> O(d) Temp Array space
 
 /*
  vector<int> rotateArray(vector<int>arr, int k) {
