@@ -28,3 +28,15 @@
    }
   return arr;
 }  */
+
+
+//APP 2 TC -> O(N) & SP -> O(1)
+
+ vector<int> rotateArray(vector<int>arr, int k) {
+   //Optimized, TC->O(N)  SC->O(1)
+   reverse(arr.begin(),arr.begin()+k);
+   reverse(arr.begin()+k,arr.end());
+   reverse(arr.begin(),arr.end());
+   return arr;
+} 
+
