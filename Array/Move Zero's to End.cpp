@@ -53,7 +53,7 @@ vector<int> moveZeros(int n, vector<int> a) {
  return a;
  }
 
-// Approach 2 (Using 2 Pointer)
+// Approach 2 (Using 2 Pointer) TC->O(N), SP->O(1), since no extra array,vector,list is used
   vector<int> moveZeros(int n, vector<int> a){
        
        int j=-1;                       //This is to set j=0 always and then compare with the right elements and check if it is non zero, if it is then swap
