@@ -58,6 +58,42 @@ void setZeros(vector<vector<int>> &matrix)
 
 
 
-      // 2) Better Solution: 
+      // 2) Better Solution:  TC -> O(2*(N*M)) SC -> O(N+M) (Extra Array)
+      /*
+	  -> Use Col[m] and row[m] array and initialise to 0
+	  -> Now traverse matrix, for every 0 that you encounter, mark it corresponding col and row array to 1 (Marking done where 0 is needed)
+	  -> Now traverse matrix, for where 1 you find check its corresponding col or row if they are marked or not if yes set that 1 to 0 
+    
+	  */
 
+
+	  /*
+		int col[m]={0};   //Initialize row and column array
+		int row[n]={0};
+
+		for(int i=0;i<n;i++)   //Set col and row array as 1, where matrix[i][j]=0
+		{
+			for(int j=0;j<m;j++)
+			{
+				if(matrix[i][j]=0)
+				{
+					col[i]=1;
+					row[j]=1;
+				}
+			}
+		}
+
+		for(int i=0;i<n;i++)   //Now traverse again to check where 1 is there in matrix, and mark to 0
+		{
+			for(int j=0;j<m;j++)
+			{
+				if(col[j] || row[i])
+				{
+					matrix[i][j]=0;
+				}
+			}
+		}
+
+		return matrix;
+	  */
 }
