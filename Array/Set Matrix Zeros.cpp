@@ -56,7 +56,7 @@ void setZeros(vector<vector<int>> &matrix)
 		}
 	} */
 
-
+//-------------------------------------------------------------------------------
 
       // 2) Better Solution:  TC -> O(2*(N*M)) SC -> O(N+M) (Extra Array)
       /*
@@ -96,4 +96,67 @@ void setZeros(vector<vector<int>> &matrix)
 
 		return matrix;
 	  */
+//-------------------------------------------------------------------------------
+
+	// 3) Optimal : 
+
+	/* MAIN ALGO : 
+      -> Here similar to approach 2 we have to follow
+	  -> But the col and row will be the top row and leftmost col in matric itself, NO NEED TO DECLARE SEPARATE ROW AND COL
+	  -> Since matrix[0][0] collides between row and col, take it separately in another variable
+	  -> Start iterating matrix if found 0, mark the resp col & row cell as 0
+	  -> Now start iterating matrix (From matrix[1,1]) to mark existing 1's to 0 by cross checking the above step
+	  -> Update the top most row
+	  -> Followed by the left most col
+	*/
+
+	//int col[m]={0}; -> matrix[0][..];
+	//int row[n]={0}; -> matrix[..][0];
+
+	int n = matrix.size();         // number of rows
+    int m = matrix[0].size();      // number of columns
+
+    int col0=1;
+	for(int i=0;i<n;i++)              //MARKING 
+	{
+		for(int j=0;j<m;j++)
+		{
+			if(matrix[i][j] == 0)
+			{
+				matrix[i][0]=0;  //Mark ith row
+				
+				if(j!=0)
+				{
+					matrix[0][j]=0; //Mark ith col
+				}
+				else
+				col0=0;
+			}
+		}
+	}
+
+	for(int i=1;i<n;i++)    //Updating from matrix[1][1]
+	{
+		for(int j=1;j<m;j++)
+		{
+			if(matrix[i][0] == 0 || matrix[0][j] == 0)
+			{
+				matrix[i][j]=0;
+			}
+		}
+	}
+
+	if(matrix[0][0] == 0) {   //Updating 0 in the top most row
+		for(int j=0;j<m;j++)
+		{
+			matrix[0][j]=0;
+		}
+	}  
+	if(col0 == 0)
+	{
+		for(int i=0;i<n;i++)
+		{
+			matrix[i][0]=0;
+		}
+	}
 }
