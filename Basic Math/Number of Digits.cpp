@@ -2,7 +2,7 @@
 int countDigit(long long x) {
     // Write your code here.
     int r;
-    int count=0;;
+    int count=0;
     //int num = x;
     while(x>0)
     {
