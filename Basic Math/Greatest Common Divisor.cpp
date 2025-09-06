@@ -67,6 +67,19 @@ Striver Approach 1 : (Partially Accepted, Brute Force, Linear TC)
 
 Striver Approach 2 : Euclidean 
 
+Logic of Euclidean Algorithm
+
+The Euclidean algorithm is based on a simple property:
+
+gcd(a, b) = gcd(b, a % b)
+(until one number becomes 0)
+
+x=20, y=28
+x < y → y = 28 % 20 = 8   (x=20, y=8)
+x > y → x = 20 % 8 = 4    (x=4, y=8)
+x < y → y = 8 % 4 = 0     (x=4, y=0)
+Loop ends.
+Answer = x = 4
 
 
 */
