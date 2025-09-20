@@ -58,7 +58,7 @@ vector<int> majorityElement(vector<int> v) {
 
    vector<int> ls;
    cnt1=0, cnt2=0;
-   for(int i=0;i<n;i++){
+   for(int i=0;i<n;i++){ //Checking whether that ele occ is >n/3
       if(v[i]==ele1){
          cnt1++;
       }
