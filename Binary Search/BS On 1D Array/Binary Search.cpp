@@ -1,3 +1,4 @@
+// Link - https://www.naukri.com/code360/problems/binary-search_972?leftPanelTabValue=PROBLEM
 //---------------------- Iterative Approach - TC -> O(logbase2 n) -------------------------------------
 /*
 int Bsearch(vector<int> &nums, int low, int high, int target)
